@@ -7,7 +7,7 @@ echo "Creating user"
 gcloud sql users create application_user --instance=varun-pe-sql
 echo "getting IP"
 ip=`gcloud sql instances describe sql-instance-varun --format="value(ipAddresses.ipAddress)"`
-gcloud sql connect shell-instance16 << EOF
+gcloud sql connect shell-instance16 --user=root<< EOF
 USE employee_mgmt;
 CREATE TABLE employee_details (name VARCHAR(10), role VARCHAR(10));
 INSERT INTO employee_details VALUES ('Varun', 'PE');
