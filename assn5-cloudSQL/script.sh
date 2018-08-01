@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Creating instance"
+echo "Creating SQL instance"
 gcloud sql instances create varun-pe-sql --tier=db-f1-micro --region=us-central1
 echo "Creating Database"
 gcloud sql databases create employee_mgmt --instance=varun-pe-sql
